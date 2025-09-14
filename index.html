@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutros OIL</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Boutros OIL 🌿</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Pure Lebanese Olive Oil</h2>
+    <p>From the heart of Koura to your kitchen—Boutros OIL delivers tradition in every drop.</p>
+  </section>
+
+  <section id="products">
+    <h3>Our Olive Oil Bottles</h3>
+    <div class="product-list">
+      <!-- Each product block -->
+      <div class="product">
+        <img src="images/1l.jpeg" alt="1L Olive Oil Bottle" />
+        <h4>1L Bottle</h4>
+        <p>Price: $7.5</p>
+        <label for="qty-1l">Quantity:</label>
+        <input type="number" id="qty-1l" min="0" value="0" />
+      </div>
+
+      <div class="product">
+        <img src="images/2l.jpeg" alt="2L Olive Oil Bottle" />
+        <h4>2L Bottle</h4>
+        <p>Price: $14</p>
+        <label for="qty-2l">Quantity:</label>
+        <input type="number" id="qty-2l" min="0" value="0" />
+      </div>
+
+      <div class="product">
+        <img src="images/3l.jpeg" alt="3L Olive Oil Bottle" />
+        <h4>3L Bottle</h4>
+        <p>Price: $20</p>
+        <label for="qty-3l">Quantity:</label>
+        <input type="number" id="qty-3l" min="0" value="0" />
+      </div>
+
+      <div class="product">
+        <img src="images/5l.jpg" alt="5L Olive Oil Bottle" />
+        <h4>5L Bottle</h4>
+        <p>Price: $35</p>
+        <label for="qty-5l">Quantity:</label>
+        <input type="number" id="qty-5l" min="0" value="0" />
+      </div>
+
+      <div class="product">
+        <img src="images/10l.jpg" alt="10L Olive Oil Bottle" />
+        <h4>10L Bottle</h4>
+        <p>Price: $60</p>
+        <label for="qty-10l">Quantity:</label>
+        <input type="number" id="qty-10l" min="0" value="0" />
+      </div>
+
+      <div class="product">
+        <img src="images/20l.jpeg" alt="20L Olive Oil Bottle" />
+        <h4>20L Bottle</h4>
+        <p>Price: $110</p>
+        <label for="qty-20l">Quantity:</label>
+        <input type="number" id="qty-20l" min="0" value="0" />
+      </div>
+    </div>
+  </section>
+
+  <section id="other-products">
+    <h3>Other Olive Products</h3>
+    <div class="product-list">
+      <div class="product">
+        <img src="images/images.jpeg" alt="Table Olives 1kg" />
+        <h4>Table Olives – 1kg</h4>
+        <p>Price: $4</p>
+        <label for="qty-olives1">Quantity:</label>
+        <input type="number" id="qty-olives1" min="0" value="0" />
+      </div>
+
+      <div class="product">
+        <img src="images/images.jpeg" alt="Table Olives 3kg Offer" />
+        <h4>Table Olives – 3kg <span style="color: green;">(Special Offer)</span></h4>
+        <p>Price: $10</p>
+        <label for="qty-olives3">Quantity:</label>
+        <input type="number" id="qty-olives3" min="0" value="0" />
+      </div>
+
+      <div class="product">
+        <img src="images/Olive_Oil_Soap_Olives_in_background.jpeg" alt="Olive Oil Soap 1kg" />
+        <h4>Olive Oil Soap – 1kg</h4>
+        <p>Price: $5</p>
+        <label for="qty-soap">Quantity:</label>
+        <input type="number" id="qty-soap" min="0" value="0" />
+      </div>
+    </div>
+  </section>
+
+  <section id="order-button">
+    <button onclick="sendCombinedOrder()">Send Order via WhatsApp</button>
+  </section>
+
+  <section id="contact">
+    <h3>Need Help or Bulk Orders?</h3>
+    <p>Contact us on <a href="https://wa.me/96181766146" target="_blank">WhatsApp</a> to confirm your order and delivery.</p>
+    <p>📍 Location: Koura, North Lebanon</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Boutros OIL. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const products = [
+      { id: 'qty-1l', name: '1L Olive Oil', price: 7.5 },
+      { id: 'qty-2l', name: '2L Olive Oil', price: 14 },
+      { id: 'qty-3l', name: '3L Olive Oil', price: 20 },
+      { id: 'qty-5l', name: '5L Olive Oil', price: 35 },
+      { id: 'qty-10l', name: '10L Olive Oil', price: 60 },
+      { id: 'qty-20l', name: '20L Olive Oil', price: 110 },
+      { id: 'qty-olives1', name: '1kg Table Olives', price: 4 },
+      { id: 'qty-olives3', name: '3kg Table Olives Offer', price: 10 },
+      { id: 'qty-soap', name: '1kg Olive Oil Soap', price: 5 }
+    ];
+
+    function sendCombinedOrder() {
+      let message = "I want to order:\n";
+      let total = 0;
+      let hasItems = false;
+
+      products.forEach(product => {
+        const qty = parseInt(document.getElementById(product.id).value);
+        if (qty > 0) {
+          const subtotal = (qty * product.price).toFixed(2);
+          message += `- ${qty} x ${product.name} ($${subtotal})\n`;
+          total += parseFloat(subtotal);
+          hasItems = true;
+        }
+      });
+
+      if (!hasItems) {
+        alert("Please select at least one product.");
+        return;
+      }
+
+      message += `Total: $${total.toFixed(2)}`;
+      const whatsappLink = `https://wa.me/96181766146?text=${encodeURIComponent(message)}`;
+      window.open(whatsappLink, '_blank');
+    }
+  </script>
+</body>
+</html>

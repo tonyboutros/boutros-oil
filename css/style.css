@@ -1,0 +1,169 @@
+/* Base styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #F5F5DC; /* beige */
+  color: #3E2F1C; /* olive brown */
+}
+
+/* Header */
+header {
+  background-color: #556B2F; /* dark olive green */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero, About, Contact */
+#hero, #about, #contact {
+  padding: 40px;
+  text-align: center;
+  background-color: #FAFAFA;
+}
+
+#hero h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+#hero p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Product Sections */
+#products, #other-products {
+  padding: 30px;
+  background-color: #fff;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Product Cards */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product {
+  background-color: #F5F5DC;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: scale(1.03);
+}
+
+.product img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.product h4 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.product p {
+  margin: 5px 0 10px;
+  font-size: 16px;
+  color: #3E2F1C;
+}
+
+.product label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #3E2F1C;
+}
+
+/* Quantity Input */
+input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  margin: 8px 0 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #fff;
+  color: #3E2F1C;
+}
+
+/* Buttons */
+button {
+  background-color: #556B2F;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #6B8E23;
+}
+
+/* Send Order Button */
+#order-button {
+  text-align: center;
+  padding: 30px;
+}
+
+#order-button button {
+  background-color: #556B2F;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#order-button button:hover {
+  background-color: #6B8E23;
+}
+
+/* Footer */
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #3E2F1C;
+}
+#contact {
+  background-color: #556B2F; /* dark olive green */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
